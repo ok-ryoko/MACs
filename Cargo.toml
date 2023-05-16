@@ -3,6 +3,7 @@ members = [
     "belt-mac",
     "cbc-mac",
     "cmac",
+    "kmac",
     "pmac",
 ]
 exclude = [
@@ -11,3 +12,15 @@ exclude = [
 
 [profile.dev]
 opt-level = 2
+
+[patch.crates-io.crypto-common]
+git = "https://github.com/ok-ryoko/RustCrypto-traits"
+branch = "crypto-common-keycustominit"
+
+[patch.crates-io.digest]
+git = "https://github.com/ok-ryoko/RustCrypto-traits"
+branch = "digest-macxof"
+
+[patch.crates-io.sha3]
+git = "https://github.com/ok-ryoko/RustCrypto-hashes"
+branch = "sha3-digest-0.11.0-pre"

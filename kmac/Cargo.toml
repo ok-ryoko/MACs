@@ -1,0 +1,29 @@
+[package]
+name = "kmac"
+version = "0.1.0" # Also update html_root_url in lib.rs when bumping this
+description = "Implementation of Keccak Message Authentication Code (KMAC)"
+authors = ["RustCrypto Developers"]
+license = "MIT OR Apache-2.0"
+edition = "2021"
+rust-version = "1.56"
+readme = "README.md"
+documentation = "https://docs.rs/kmac"
+repository = "https://github.com/RustCrypto/MACs"
+keywords = ["crypto", "digest", "kmac", "mac"]
+categories = ["cryptography", "no-std"]
+
+[dependencies]
+digest = { version = "0.11.0-pre", features = ["mac"] }
+sha3 = "0.10.6"
+
+[dev-dependencies]
+digest = { version = "0.11.0-pre", features = ["dev"] }
+hex-literal = "0.2.2"
+
+[features]
+std = ["digest/std"]
+reset = [] # Enable ability to reset KMAC instances
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
