@@ -149,7 +149,7 @@ where
 }
 
 impl_kmac!(Kmac128, CShake128, "Kmac128");
-impl_kmac!(Kmac256, CShake256, "Kmac128");
+impl_kmac!(Kmac256, CShake256, "Kmac256");
 
 #[inline(always)]
 pub(crate) fn right_encode(val: u64, buf: &mut [u8; 9]) -> &[u8] {
